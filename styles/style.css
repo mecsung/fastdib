@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(53,64,143);
+    background: rgb(201,228,233);
+    background: radial-gradient(circle, rgba(201,228,233,1) 0%, rgba(148,187,233,1) 100%);
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+    padding: 1%;
+}
+.layout-forms {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.faculty-layout {
+    /* border: 1px solid red; */
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/** Deans **/
+.faculty-left, .faculty-right {
+    width: 42%;
+}
+.deans {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /** vertically **/
+    /** align-items: center; center horizontally **/
+}
+.dean-1, .dean-2, .dean-3, .dean-4, .dean-5, .dean-6 {
+    border: 1px solid black;
+    height: 12%;
+    width: 80%;
+    background: darkgrey;
+    color: #383535;
+}
+
+/** Faculty and Program Chairs **/
+.faculty-left, .faculty-right {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+.section-1, .section-5 {
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+}
+.section-2, .section-3, .section-4 {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pc-left, .pc-right {
+    width: 33%;
+    height: 100%;
+    border: 1px solid black;
+    background: darkgrey;
+}
+.top, .bot {
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+}
+.cubicle {
+    width: 16.67%;
+    border: 1px solid black;
+    white-space: normal;
+    word-wrap: break-word;
+    background: darkgrey;
+    color: white;
+}
+
+/** Logo **/
+.logo-meaning {
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+.label-meaning {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    word-spacing: 0px;
+    color: #464646;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    /* height: 12%; */
+    width: 22%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.test {
+    font-weight: bold;
+    font-size: 40px;
+}
+.shade-at-desk {
+    width: 30%;
+    height: 50%;
+    margin: 3%;
+}
+.desk-green { background: green; }
+.desk-red { background: red; }
+.desk-darkgrey { background: darkgrey; }
+
+/** Status Absent **/
+.status-absent-deans, .status-absent-chairs, .status-absent-faculty  {
+    border: 1px solid black;
+    background: red;
+    color: white;
+}
+.status-absent-deans {
+    height: 12%;
+    width: 80%;
+}
+.status-absent-chairs {
+    width: 33%;
+    height: 100%;
+}
+.status-absent-faculty {
+    width: 16.67%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+/** Status At Desk **/
+.status-atdesk-deans, .status-atdesk-chairs, .status-atdesk-faculty {
+    border: 1px solid black;
+    background: green;
+    color: white;
+}
+.status-atdesk-deans {
+    height: 12%;
+    width: 80%;
+}
+.status-atdesk-chairs {
+    width: 33%;
+    height: 100%;
+}
+.status-atdesk-faculty {
+    width: 16.67%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+/** Status In Class **/
