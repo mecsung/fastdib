@@ -69,6 +69,12 @@
                             array_splice($words, -1);
                             $fullName = implode(" ", $words);
                         }
+                        if ($status == "busy") {
+                            $className = "status-busy-deans";
+                            $words = explode(" ",$fullName);
+                            array_splice($words, -1);
+                            $fullName = implode(" ", $words);
+                        }
 
                         $isDefaultCubicle = in_array($fullName, $defaultCubicles);
                         $buttonName = $isDefaultCubicle ? "register-btn" : "update-btn";
@@ -119,6 +125,12 @@
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
                             }
+                            if ($status == "busy") {
+                                $className2 = "status-busy-chairs";
+                                $words = explode(" ",$fullName2);
+                                array_splice($words, -1);
+                                $fullName2 = implode(" ", $words);
+                            }
                             
                             $isDefaultChair = in_array($fullName2, $defaultChairs);
                             $buttonName = $isDefaultChair ? "register-btn" : "update-btn";
@@ -165,6 +177,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -221,6 +239,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -282,6 +306,12 @@
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
                                 }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
 
                                 $isDefaultFaculty = in_array($fullName3, $defaultFacultys);
                                 $buttonName = $isDefaultFaculty ? "register-btn" : "update-btn";
@@ -333,6 +363,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -394,6 +430,12 @@
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
                                 }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
 
                                 $isDefaultFaculty = in_array($fullName3, $defaultFacultys);
                                 $buttonName = $isDefaultFaculty ? "register-btn" : "update-btn";
@@ -445,6 +487,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -504,6 +552,12 @@
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
                             }
+                            if ($status == "busy") {
+                                $className2 = "status-busy-chairs";
+                                $words = explode(" ",$fullName2);
+                                array_splice($words, -1);
+                                $fullName2 = implode(" ", $words);
+                            }
 
                             $isDefaultChair = in_array($fullName2, $defaultChairs);
                             $buttonName = $isDefaultChair ? "register-btn" : "update-btn";
@@ -554,6 +608,12 @@
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
                             }
+                            if ($status == "busy") {
+                                $className2 = "status-busy-chairs";
+                                $words = explode(" ",$fullName2);
+                                array_splice($words, -1);
+                                $fullName2 = implode(" ", $words);
+                            }
 
                             $isDefaultChair = in_array($fullName2, $defaultChairs);
                             $buttonName = $isDefaultChair ? "register-btn" : "update-btn";
@@ -600,6 +660,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -655,6 +721,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -716,6 +788,12 @@
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
                                 }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
 
                                 $isDefaultCFaculty = in_array($fullName3, $defaultFacultys);
                                 $buttonName = $isDefaultCFaculty ? "register-btn" : "update-btn";
@@ -767,6 +845,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -828,6 +912,12 @@
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
                                 }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
 
                                 $isDefaultCFaculty = in_array($fullName3, $defaultFacultys);
                                 $buttonName = $isDefaultCFaculty ? "register-btn" : "update-btn";
@@ -879,6 +969,12 @@
                                 }
                                 if ($status == "in-class") {
                                     $className3 = "status-inclass-faculty";
+                                    $words = explode(" ",$fullName3);
+                                    array_splice($words, -1);
+                                    $fullName3 = implode(" ", $words);
+                                }
+                                if ($status == "busy") {
+                                    $className3 = "status-busy-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -938,6 +1034,12 @@
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
                             }
+                            if ($status == "busy") {
+                                $className2 = "status-busy-chairs";
+                                $words = explode(" ",$fullName2);
+                                array_splice($words, -1);
+                                $fullName2 = implode(" ", $words);
+                            }
 
                             $isDefaultChair = in_array($fullName2, $defaultChairs);
                             $buttonName = $isDefaultChair ? "register-btn" : "update-btn";
@@ -974,6 +1076,10 @@
             <div class="label-meaning">
                 <div class="shade-at-desk desk-yellow"></div>
                 <div class="shade-label">Not in Campus</div>
+            </div>
+            <div class="label-meaning">
+                <div class="shade-at-desk desk-orange"></div>
+                <div class="shade-label">Busy</div>
             </div>
             <div class="label-meaning test">
                 DRY RUN

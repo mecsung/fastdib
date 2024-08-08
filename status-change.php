@@ -59,7 +59,8 @@
                         <option selected>Change Status</option>
                         <option value="in-class">In Class/Campus</option>
                         <option value="at-desk">At Desk</option>
-                        <option value="absent">Absent</option>
+                        <option value="absent">Not in Campus</option>
+                        <option value="busy">Busy</option>
                     </select>
                 </div>
                 
