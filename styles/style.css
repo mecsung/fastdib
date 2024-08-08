@@ -123,45 +123,38 @@ img {
     margin: 3%;
 }
 .desk-green { background: green; }
-.desk-red { background: red; }
-.desk-darkgrey { background: darkgrey; }
+.desk-yellow { background: rgb(236, 236, 48); }
+.desk-lightblue { background: rgb(91, 151, 201); }
 
-/** Status Absent **/
+/** Status Absent, At Desk, In Class **/
 .status-absent-deans, .status-absent-chairs, .status-absent-faculty  {
     border: 1px solid black;
-    background: red;
-    color: white;
+    background: rgb(236, 236, 48);
+    color: black;
 }
-.status-absent-deans {
-    height: 12%;
-    width: 80%;
-}
-.status-absent-chairs {
-    width: 33%;
-    height: 100%;
-}
-.status-absent-faculty {
-    width: 16.67%;
-    white-space: normal;
-    word-wrap: break-word;
-}
-/** Status At Desk **/
 .status-atdesk-deans, .status-atdesk-chairs, .status-atdesk-faculty {
     border: 1px solid black;
     background: green;
     color: white;
 }
-.status-atdesk-deans {
-    height: 12%;
-    width: 80%;
+.status-inclass-faculty, .status-inclass-chairs, .status-inclass-deans {
+    border: 1px solid black;
+    background: rgb(91, 151, 201);
+    color: white;
 }
-.status-atdesk-chairs {
-    width: 33%;
-    height: 100%;
-}
-.status-atdesk-faculty {
+
+
+.status-absent-faculty, .status-inclass-faculty, .status-atdesk-faculty {
     width: 16.67%;
     white-space: normal;
     word-wrap: break-word;
 }
-/** Status In Class **/
+.status-absent-deans, .status-atdesk-deans, .status-inclass-deans {
+    height: 12%;
+    width: 80%;
+}
+.status-absent-chairs, .status-atdesk-chairs, .status-inclass-chairs {
+    width: 33%;
+    height: 100%;
+}
+

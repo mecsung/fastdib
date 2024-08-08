@@ -64,6 +64,7 @@
                             $fullName = implode(" ", $words);
                         }
                         if ($status == "in-class") {
+                            $className = "status-inclass-deans";
                             $words = explode(" ",$fullName);
                             array_splice($words, -1);
                             $fullName = implode(" ", $words);
@@ -113,6 +114,7 @@
                                 $fullName2 = implode(" ", $words);
                             }
                             if ($status == "in-class") {
+                                $className2 = "status-inclass-chairs";
                                 $words = explode(" ",$fullName2);
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
@@ -162,6 +164,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -217,6 +220,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -273,6 +277,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -327,6 +332,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -383,6 +389,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -437,6 +444,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -491,6 +499,7 @@
                                 $fullName2 = implode(" ", $words);
                             }
                             if ($status == "in-class") {
+                                $className2 = "status-inclass-chairs";
                                 $words = explode(" ",$fullName2);
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
@@ -540,6 +549,7 @@
                                 $fullName2 = implode(" ", $words);
                             }
                             if ($status == "in-class") {
+                                $className2 = "status-inclass-chairs";
                                 $words = explode(" ",$fullName2);
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
@@ -589,6 +599,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -643,6 +654,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -699,6 +711,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -753,6 +766,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -809,6 +823,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -863,6 +878,7 @@
                                     $fullName3 = implode(" ", $words);
                                 }
                                 if ($status == "in-class") {
+                                    $className3 = "status-inclass-faculty";
                                     $words = explode(" ",$fullName3);
                                     array_splice($words, -1);
                                     $fullName3 = implode(" ", $words);
@@ -917,6 +933,7 @@
                                 $fullName2 = implode(" ", $words);
                             }
                             if ($status == "in-class") {
+                                $className2 = "status-inclass-chairs";
                                 $words = explode(" ",$fullName2);
                                 array_splice($words, -1);
                                 $fullName2 = implode(" ", $words);
@@ -951,12 +968,12 @@
                 <div class="shade-label">At Desk</div>
             </div>
             <div class="label-meaning">
-                <div class="shade-at-desk desk-darkgrey"></div>
+                <div class="shade-at-desk desk-lightblue"></div>
                 <div class="shade-label">In Class/Campus</div>
             </div>
             <div class="label-meaning">
-                <div class="shade-at-desk desk-red"></div>
-                <div class="shade-label">Absent</div>
+                <div class="shade-at-desk desk-yellow"></div>
+                <div class="shade-label">Not in Campus</div>
             </div>
             <div class="label-meaning test">
                 DRY RUN
