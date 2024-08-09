@@ -101,4 +101,23 @@ if (isset($_POST['update-btn'])) {
         }
     }
 }
+
+if (isset($_POST['delete-record'])) {
+    $cubicle_num = $_POST['cubicle_num'];
+    
+    $selectQuery = "SELECT * FROM data WHERE cubicle_num='$cubicle_num'";
+    $result = mysqli_query($connection, $selectQuery);
+
+    if (mysqli_num_rows($result) > 0) {
+        // Delete the record
+        $deleteQuery = "DELETE FROM data WHERE cubicle_num='$cubicle_num'";
+        if (mysqli_query($connection, $deleteQuery)) {
+            header('Location: ../index.php');
+        } else {
+            $errors['database'] = "Error deleting data: " . mysqli_error($connection);
+        }
+    } else {
+        $errors['cubicle_num'] = "Cubicle number does not exist";
+    }
+}
 ?>

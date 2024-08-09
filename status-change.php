@@ -29,6 +29,16 @@
             }
         }
     }
+
+    if (isset($_POST['auto-update-btn'])) {
+        $updateQuery = "UPDATE data SET stat='absent'";
+        if (mysqli_query($connection, $updateQuery)) {
+            $errors['status'] = "Status Change Successful";
+        } else {
+            $errors['error'] = "Status Change Unsuccessful";
+        }
+        mysqli_close($connection);
+    }
 ?>
 
 <!doctype html>
@@ -44,7 +54,7 @@
 </head>
     <body>
         <div class="box">
-            <form action="status-change.php" method="POST">
+            <form action="status-change.php" method="POST" id="statusForm">
                 <img src="assets/image.png" alt="nufi-logo">
                 <div class="text-logo-name">
                     <h2>FaStDiB</h2>
@@ -56,16 +66,24 @@
                 </div>
                 <div class="mb-3">
                     <select class="form-select" aria-label="Default select example" name="statusChange">
-                        <option selected>Change Status</option>
+                        <option selected disabled>Change Status</option>
                         <option value="in-class">In Class/Campus</option>
                         <option value="at-desk">At Desk</option>
                         <option value="absent">Not in Campus</option>
                         <option value="busy">Busy</option>
                     </select>
                 </div>
-                
+                <div class="mb-3">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
                 <div class="d-grid gap-2">
                     <input class="btn btn-primary" type="submit" name="update-btn" value="Update">
+                </div>
+                <div class="d-grid gap-2">
+                    <input class="btn btn-primary" type="submit" 
+                        id="auto-update-btn" name="auto-update-btn"
+                        value="Auto Update" hidden>
                 </div>
             </form>
         </div>
@@ -98,6 +116,7 @@
             <?php endif; ?>
         </div>
         
+        <!-- Toast -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var toastElList = [].slice.call(document.querySelectorAll('.toast'));
@@ -106,6 +125,59 @@
                 });
                 toastList.forEach(toast => toast.show());
             });
+        </script>
+
+        <!-- Auto Update -->
+        <script>
+            function clickButtonAt6PM() {
+                var btn = document.getElementById("auto-update-btn");
+
+                // Calculate the time until 8 AM tomorrow
+                var now = new Date();
+                var next8AM = new Date();
+                next8AM.setHours(18, 0, 0, 0); // Set time to 8:00 AM
+
+                if (now > next8AM) {
+                    next8AM.setDate(next8AM.getDate() + 1); // If 8 AM today has passed, set to 8 AM tomorrow
+                }
+
+                var timeUntil8AM = next8AM - now; // Calculate the time difference in milliseconds
+
+                setTimeout(function() {
+                    btn.click();
+                    console.log('Button clicked at 8 AM');
+                }, timeUntil8AM);
+            }
+
+            clickButtonAt6PM();
+        </script>
+
+        <!-- Remember Me -->
+        <script>
+            // Function to load stored ID number into the input field and check the "Remember Me" checkbox
+            function loadStoredID() {
+                const storedID = localStorage.getItem('rememberedID');
+                if (storedID) {
+                    document.getElementById('exampleFormControlInput1').value = storedID;
+                    document.getElementById('rememberMe').checked = true;
+                }
+            }
+
+            // Function to save ID number to localStorage if "Remember Me" is checked
+            function saveIDNumber() {
+                const idnum = document.getElementById('exampleFormControlInput1').value;
+                if (document.getElementById('rememberMe').checked) {
+                    localStorage.setItem('rememberedID', idnum);
+                } else {
+                    localStorage.removeItem('rememberedID');
+                }
+            }
+
+            // Load stored ID number when the page loads
+            window.addEventListener('load', loadStoredID);
+
+            // Save ID number when the form is submitted
+            document.getElementById('statusForm').addEventListener('submit', saveIDNumber);
         </script>
     </body>
 </html>

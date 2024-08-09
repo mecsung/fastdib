@@ -1100,15 +1100,15 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ID Number</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="idnum" placeholder="20xx-xxxxxx" required>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="idnum" placeholder="20xx-xxxxxx" >
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="fname" placeholder="Juan" required>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="fname" placeholder="Juan" >
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="lname" placeholder="Dela Cruz" required>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="lname" placeholder="Dela Cruz" >
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Cubicle Number</label>
@@ -1116,7 +1116,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-danger" value="Delete" name="delete-record">
                     <input type="submit" id="submitButton" class="btn btn-primary" value="Register">
                 </div>
                 </div>
