@@ -7,7 +7,10 @@
         $statusChange = $_POST['statusChange'];
 
         if (empty($idnum)) { $error['idnum'] = "idnum empty"; }
-        if (empty($fstatusChange)) { $error['statusChange'] = "statusChange empty"; }   
+        if (empty($statusChange)) { $error['statusChange'] = "statusChange empty"; }
+        if ($statusChange === "Change Status") {
+            $errors['statusChange'] = "Please select a valid status.";
+        }
 
         if (count($errors) == 0) {
             // Verify if the ID exists
@@ -66,12 +69,13 @@
                 </div>
                 <div class="mb-3">
                     <select class="form-select" aria-label="Default select example" name="statusChange">
-                        <option selected disabled>Change Status</option>
+                        <option selected >Change Status</option>
                         <option value="in-class">In Class/Campus</option>
                         <option value="at-desk">At Desk</option>
                         <option value="absent">Not in Campus</option>
                         <option value="busy">Busy</option>
                     </select>
+                    <div id="statusError" class="text-danger" style="display:none;">Please select a valid status.</div>
                 </div>
                 <div class="mb-3">
                     <input type="checkbox" id="rememberMe" name="rememberMe">
@@ -178,6 +182,19 @@
 
             // Save ID number when the form is submitted
             document.getElementById('statusForm').addEventListener('submit', saveIDNumber);
+        </script>
+
+        <script>
+            document.getElementById('statusForm').addEventListener('submit', function(event) {
+                const statusSelect = document.getElementById('statusChange');
+                const statusError = document.getElementById('statusError');
+                if (statusSelect.value === 'blocked') {
+                    statusError.style.display = 'block'; // Show error message
+                    event.preventDefault(); // Prevent form submission
+                } else {
+                    statusError.style.display = 'none'; // Hide error message
+                }
+            });
         </script>
     </body>
 </html>
