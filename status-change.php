@@ -11,7 +11,7 @@
         if ($statusChange === "Change Status") {
             $errors['statusChange'] = "Please select a valid status.";
         }
-
+        
         if (count($errors) == 0) {
             // Verify if the ID exists
             $selectQuery = "SELECT * FROM data WHERE idnum='$idnum'";
