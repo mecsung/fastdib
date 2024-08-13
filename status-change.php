@@ -32,16 +32,6 @@
             }
         }
     }
-
-    if (isset($_POST['auto-update-btn'])) {
-        $updateQuery = "UPDATE data SET stat='absent'";
-        if (mysqli_query($connection, $updateQuery)) {
-            $errors['status'] = "Status Change Successful";
-        } else {
-            $errors['error'] = "Status Change Unsuccessful";
-        }
-        mysqli_close($connection);
-    }
 ?>
 
 <!doctype html>
@@ -83,11 +73,6 @@
                 </div>
                 <div class="d-grid gap-2">
                     <input class="btn btn-primary" type="submit" name="update-btn" value="Update">
-                </div>
-                <div class="d-grid gap-2">
-                    <input class="btn btn-primary" type="submit" 
-                        id="auto-update-btn" name="auto-update-btn"
-                        value="Auto Update" hidden>
                 </div>
             </form>
         </div>
@@ -132,14 +117,14 @@
         </script>
 
         <!-- Auto Update -->
-        <script>
+        <!-- <script>
             function clickButtonAt6PM() {
                 var btn = document.getElementById("auto-update-btn");
 
                 // Calculate the time until 8 AM tomorrow
                 var now = new Date();
                 var next8AM = new Date();
-                next8AM.setHours(18, 0, 0, 0); // Set time to 8:00 AM
+                next8AM.setHours(10, 20, 0, 0); // Set time to 8:00 AM
 
                 if (now > next8AM) {
                     next8AM.setDate(next8AM.getDate() + 1); // If 8 AM today has passed, set to 8 AM tomorrow
@@ -154,7 +139,7 @@
             }
 
             clickButtonAt6PM();
-        </script>
+        </script> -->
 
         <!-- Remember Me -->
         <script>
@@ -184,6 +169,7 @@
             document.getElementById('statusForm').addEventListener('submit', saveIDNumber);
         </script>
 
+        <!-- Change Status Error Catch -->
         <script>
             document.getElementById('statusForm').addEventListener('submit', function(event) {
                 const statusSelect = document.getElementById('statusChange');

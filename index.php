@@ -1061,10 +1061,8 @@
                 </div>
             </div>
         </div>
-        <div class="logo-meaning">
-            
+        <div class="logo-meaning">  
             <img src="assets/image.png" alt="nufi-logo">
-            
             <div class="label-meaning">
                 <div class="shade-at-desk desk-green"></div>
                 <div class="shade-label">At Desk</div>
@@ -1081,13 +1079,32 @@
                 <div class="shade-at-desk desk-orange"></div>
                 <div class="shade-label">Busy</div>
             </div>
-            <div class="label-meaning test">
-                DRY RUN
+            <div class="label-meaning test" >
+                <input class="update-demo" type="submit"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#confirmModal"
+                        value="DRY RUN">
             </div>
-            
         </div>
     </div>
 
+    <!-- Update All Modal -->
+    <form action="controller/register-new.php" method="POST">
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Save Changes?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" name="auto-update-btn" class="btn btn-primary" value="Confirm">
+                </div>
+                </div>
+            </div>
+        </div>     
+    </form>
     <!-- Modal Register and Update -->
     <form action="controller/register-new.php" method="POST">
         <div class="modal fade" id="register-update-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1181,19 +1198,41 @@
     </script>
     <!-- 5 Seconds Refresh -->
     <script>
-        function isModalOpen() {
-            var modal = document.getElementById('register-update-Modal');
-            return modal.style.display === 'block';
-        }
+        var refreshInterval;
 
+        function isModalOpen() {
+            var registerUpdateModal = document.getElementById('register-update-Modal');
+            var confirmModal = document.getElementById('confirmModal');
+            
+            return (registerUpdateModal && registerUpdateModal.style.display === 'block') || 
+                (confirmModal && confirmModal.style.display === 'block');
+        }
+        
         function refreshPage() {
             if (!isModalOpen()) {
                 location.reload();
             }
         }
 
-        // Set interval to call refreshPage every 5 seconds (5000 milliseconds)
-        setInterval(refreshPage, 3000);
+        function startRefreshInterval() {
+            // Clear any existing interval to avoid multiple intervals running simultaneously
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+            
+            // Set interval to call refreshPage every 3 seconds (3000 milliseconds)
+            refreshInterval = setInterval(refreshPage, 3000);
+        }
+
+        function onModalSubmit() {
+            // Code to handle modal submission (e.g., closing the modal)
+            
+            // Reattach the refresh interval after modal submission
+            startRefreshInterval();
+        }
+
+        // Start the interval when the page loads
+        startRefreshInterval();
     </script>
 
     <script src="path/to/jquery.min.js"></script>

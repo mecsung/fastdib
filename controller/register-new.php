@@ -120,4 +120,17 @@ if (isset($_POST['delete-record'])) {
         $errors['cubicle_num'] = "Cubicle number does not exist";
     }
 }
+
+if (isset($_POST['auto-update-btn'])) {
+    $updateQuery = "UPDATE data SET stat='absent'";
+    if (mysqli_query($connection, $updateQuery)) {
+        $errors['status'] = "Status Change Successful";
+        header('Location: ../index.php');
+    } else {
+        $errors['error'] = "Status Change Unsuccessful";
+        header('Location: ../index.php');
+    }
+    mysqli_close($connection);
+}
+
 ?>
